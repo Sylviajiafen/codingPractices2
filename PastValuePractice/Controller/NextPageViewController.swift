@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NextPageViewController: UIViewController {
+class NextPageViewController: UIViewController, UITextFieldDelegate {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -92,9 +92,15 @@ class NextPageViewController: UIViewController {
         
         self.delegateFromCell?.setTextInCell(self, textField: self.cellStringTextField)
         
+        guard let textInPut = cellStringTextField.text else { return }
+        
+        preparedTextInput?(textInPut)
+        
     }
     
+    
     // 以 closure 方式實作傳值
+    var preparedTextInput: ((String) -> ())?
     
     
     // 以 delegate pattern 方式實作傳值

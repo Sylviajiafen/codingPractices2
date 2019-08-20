@@ -36,9 +36,18 @@ class FirstPageViewController: UIViewController {
         let nextPage = NextPageViewController()
         
         nextPage.delegate = self
+        
         show(nextPage, sender: nil)
+        
+        // 以 closure 方式實作傳值
+        nextPage.preparedTextInput = { [weak self] (text) in
+            
+            self?.stringArr.append(text)
+            
+            self?.firstPageTableView.reloadData()
+        }
+        
     }
-    
 
 }
 
@@ -106,6 +115,13 @@ extension FirstPageViewController: UITableViewDelegate {
         
         show(nextPage, sender: nil)
         
+        // 以 closure 方式實作傳值
+        nextPage.preparedTextInput = { [weak self] text in
+            
+            guard let index = self?.selectedIndex else {return}
+            
+            self?.stringArr[index] = text
+        }
     }
     
 }
@@ -129,11 +145,11 @@ extension FirstPageViewController: NextPageViewControllerDelegate {
     
     func textFromNextPage(_ page: NextPageViewController) {
         
-        guard let nextTextString = page.cellStringTextField.text else {return}
-        
-        stringArr.append(nextTextString)
-        
-        firstPageTableView.reloadData()
+//        guard let nextTextString = page.cellStringTextField.text else {return}
+//
+//        stringArr.append(nextTextString)
+//
+//        firstPageTableView.reloadData()
        
     }
     

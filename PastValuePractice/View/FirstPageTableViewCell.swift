@@ -24,7 +24,7 @@ class FirstPageTableViewCell: UITableViewCell {
         selectedCell?(self)
     }
     
-    // 以 closure
+    // 以 closure 方式實作刪除 cell
     var selectedCell: ((FirstPageTableViewCell) -> ())?
     
     
