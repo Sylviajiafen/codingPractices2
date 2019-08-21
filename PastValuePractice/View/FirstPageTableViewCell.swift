@@ -16,9 +16,10 @@ class FirstPageTableViewCell: UITableViewCell {
     
     weak var delegate: FirstPageTableViewCellDelegate?
     
-    // 以 delegate 方式實作刪除 cell
+    
     @IBAction func deletePressed(_ sender: Any) {
         
+        // 以 delegate 方式實作刪除 cell
         self.delegate?.userDidPressedDelete(self)
         
         selectedCell?(self)
@@ -30,6 +31,15 @@ class FirstPageTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        deleteBtn.layer.borderWidth = 1
+        
+        deleteBtn.layer.borderColor = UIColor(red: 148/255, green: 17/255, blue: 0/255, alpha: 1).cgColor
+        
+        deleteBtn.layer.cornerRadius = 5
+        
+        deleteBtn.clipsToBounds = true
+        
         // Initialization code
     }
 

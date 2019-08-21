@@ -30,13 +30,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S0u-yw-gkm">
-                                                    <rect key="frame" x="32" y="11.5" width="42" height="21"/>
+                                                    <rect key="frame" x="32" y="11.5" width="42" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjc-p1-CBQ">
-                                                    <rect key="frame" x="339" y="7" width="43" height="30"/>
+                                                    <rect key="frame" x="327" y="9.5" width="55" height="24.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="55" id="owC-vX-jPg"/>
+                                                    </constraints>
                                                     <state key="normal" title="delete">
                                                         <color key="titleColor" red="0.58072251080000004" green="0.066734083" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </state>
@@ -46,10 +49,12 @@
                                                 </button>
                                             </subviews>
                                             <constraints>
+                                                <constraint firstItem="S0u-yw-gkm" firstAttribute="top" secondItem="IWt-s3-fKy" secondAttribute="top" constant="11.5" id="3XC-XG-lnw"/>
                                                 <constraint firstItem="S0u-yw-gkm" firstAttribute="leading" secondItem="IWt-s3-fKy" secondAttribute="leading" constant="32" id="6Ty-Yv-PV4"/>
                                                 <constraint firstItem="yjc-p1-CBQ" firstAttribute="centerY" secondItem="IWt-s3-fKy" secondAttribute="centerY" id="6hS-sU-liC"/>
                                                 <constraint firstAttribute="trailing" secondItem="yjc-p1-CBQ" secondAttribute="trailing" constant="32" id="MQX-9L-ZZQ"/>
                                                 <constraint firstItem="S0u-yw-gkm" firstAttribute="centerY" secondItem="IWt-s3-fKy" secondAttribute="centerY" id="PTd-4g-Fu7"/>
+                                                <constraint firstItem="yjc-p1-CBQ" firstAttribute="top" secondItem="IWt-s3-fKy" secondAttribute="top" constant="9.5" id="jJX-Jb-TYJ"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
