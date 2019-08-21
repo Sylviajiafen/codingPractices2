@@ -51,9 +51,11 @@
 6. 若是從 **FirstPage** 的 ＋ 連過來，UITextField 的內容為空白。
    
 7. 若是從 **FirstPage** 的 Cell 連過來，此時若修改 UITextField 的內容，點擊 UIButton 回到 **FirstPage** 時，
+
    **FirstPage** 剛剛被點擊 Cell 的 label 內容也會被更動成 UITextField 的內容。
    
 8. 若是從 **FirstPage** 的 ＋ 連過來，此時若新增 UITextField 的內容，點擊 UIButton 回到 **FirstPage** 時，
+
    **FirstPage** 會新增一個 Cell，其 label 內容為 UITextField 的內容。
    
 9. 上述 7. 8. 的功能，可以下列兩種方式實現：
