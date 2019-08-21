@@ -39,13 +39,13 @@ class FirstPageViewController: UIViewController {
         
         show(nextPage, sender: nil)
         
-        // 以 closure 方式實作傳值
-        nextPage.preparedTextInput = { [weak self] (text) in
-            
-            self?.stringArr.append(text)
-            
-            self?.firstPageTableView.reloadData()
-        }
+        // 以 closure 方式實作新增 cell
+//        nextPage.preparedTextInput = { [weak self] (text) in
+//
+//            self?.stringArr.append(text)
+//
+//            self?.firstPageTableView.reloadData()
+//        }
         
     }
 
@@ -72,19 +72,19 @@ extension FirstPageViewController: UITableViewDataSource{
         
         // 以 Target-Action (Target 請設定為 UIViewController) 方式實作刪除 cell
         cell.deleteBtn.tag = indexPath.row
-        // cell.deleteBtn.addTarget(self, action: #selector(deleteCell(sender:)), for: .touchUpInside)
+//        cell.deleteBtn.addTarget(self, action: #selector(deleteCell(sender:)), for: .touchUpInside)
 
         // 以 closure 的方式方式實作刪除 cell
-        cell.selectedCell = { [weak self] cell in
+//        cell.selectedCell = { [weak self] cell in
+//
+//            guard let index = self?.firstPageTableView.indexPath(for: cell) else {return}
+//
+//            self?.stringArr.remove(at: index.row)
+//
+//            self?.firstPageTableView.deleteRows(at: [index], with: .right)
+        
             
-            guard let index = self?.firstPageTableView.indexPath(for: cell) else {return}
-            
-            self?.stringArr.remove(at: index.row)
-            
-            self?.firstPageTableView.deleteRows(at: [index], with: .right)
-            
-            
-        }
+//        }
         
         return cell
     }
@@ -115,13 +115,13 @@ extension FirstPageViewController: UITableViewDelegate {
         
         show(nextPage, sender: nil)
         
-        // 以 closure 方式實作傳值
-        nextPage.preparedTextInput = { [weak self] text in
-            
-            guard let index = self?.selectedIndex else {return}
-            
-            self?.stringArr[index] = text
-        }
+        // 以 closure 方式實作改變 cell 的值
+//        nextPage.preparedTextInput = { [weak self] text in
+//
+//            guard let index = self?.selectedIndex else {return}
+//
+//            self?.stringArr[index] = text
+//        }
     }
     
 }
@@ -131,11 +131,11 @@ extension FirstPageViewController: FirstPageTableViewCellDelegate {
     
     func userDidPressedDelete(_ cell: FirstPageTableViewCell) {
 
-//        guard let toBeRemovedCellIndex = firstPageTableView.indexPath(for: cell) else {return}
-//
-//        stringArr.remove(at: toBeRemovedCellIndex.row)
-//
-//        firstPageTableView.deleteRows(at: [toBeRemovedCellIndex], with: .fade)
+        guard let toBeRemovedCellIndex = firstPageTableView.indexPath(for: cell) else {return}
+
+        stringArr.remove(at: toBeRemovedCellIndex.row)
+
+        firstPageTableView.deleteRows(at: [toBeRemovedCellIndex], with: .fade)
     }
     
 }
@@ -145,11 +145,11 @@ extension FirstPageViewController: NextPageViewControllerDelegate {
     
     func textFromNextPage(_ page: NextPageViewController) {
         
-//        guard let nextTextString = page.cellStringTextField.text else {return}
-//
-//        stringArr.append(nextTextString)
-//
-//        firstPageTableView.reloadData()
+        guard let nextTextString = page.cellStringTextField.text else {return}
+
+        stringArr.append(nextTextString)
+
+        firstPageTableView.reloadData()
        
     }
     

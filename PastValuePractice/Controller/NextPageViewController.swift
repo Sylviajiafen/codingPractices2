@@ -86,6 +86,7 @@ class NextPageViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc func backToFirstPage() {
+        
         navigationController?.popViewController(animated: true)
         
         self.delegate?.textFromNextPage(self)
