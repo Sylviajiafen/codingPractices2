@@ -1,7 +1,7 @@
 # codingPractices -2
 ## Pass Value
 
-**FirstPageViewController**
+### **FirstPageViewController**
 
 1. 有一 UITableView, 四邊貼齊 SafeArea。
 
@@ -17,12 +17,12 @@
 3. Delegate Pattern
 ```
 
-5. 有 Navigation Bar，上面右側有個 + 按鈕，點擊會推出 ***NextPage***。
+5. 有 Navigation Bar，上面右側有個 + 按鈕，點擊會推出 **NextPage**。
 
-6. 點擊 UITableViewCell 會推出相同的 ***NextPage***，並會把 Cell 內的文字傳到第二頁。
+6. 點擊 UITableViewCell 會推出相同的 **NextPage**，並會把 Cell 內的文字傳到第二頁。
 
 
-***NextPageViewController***
+### **NextPageViewController**
 
 1. 此頁的 UI 僅以程式碼建構。
 
@@ -44,17 +44,17 @@
      * Height 為 40
      * top 在 super view 的 centerYAnchor 的下方 20 pt 
 
-4. 點擊 UIButton 會回到上一頁（***FirstPage***）。
+4. 點擊 UIButton 會回到上一頁（**FirstPage**）。
 
-5. 若是從 ***FirstPage*** 的 Cell 連過來，UITextField 會顯示與點擊的 Cell 的 label 上的內容。
+5. 若是從 **FirstPage** 的 Cell 連過來，UITextField 會顯示與點擊的 Cell 的 label 上的內容。
 
-6. 若是從 ***FirstPage*** 的 ＋ 連過來，UITextField 的內容為空白。
+6. 若是從 **FirstPage** 的 ＋ 連過來，UITextField 的內容為空白。
    
-7. 若是從 ***FirstPage*** 的 Cell 連過來，此時若修改 UITextField 的內容，點擊 UIButton 回到 ***FirstPage*** 時，
-   ***FirstPage*** 剛剛被點擊 Cell 的 label 內容也會被更動成 UITextField 的內容。
+7. 若是從 **FirstPage** 的 Cell 連過來，此時若修改 UITextField 的內容，點擊 UIButton 回到 **FirstPage** 時，
+   **FirstPage** 剛剛被點擊 Cell 的 label 內容也會被更動成 UITextField 的內容。
    
-8. 若是從 ***FirstPage*** 的 ＋ 連過來，此時若新增 UITextField 的內容，點擊 UIButton 回到 ***FirstPage*** 時，
-   ***FirstPage*** 會新增一個 Cell，其 label 內容為 UITextField 的內容。
+8. 若是從 **FirstPage** 的 ＋ 連過來，此時若新增 UITextField 的內容，點擊 UIButton 回到 **FirstPage** 時，
+   **FirstPage** 會新增一個 Cell，其 label 內容為 UITextField 的內容。
    
 9. 上述 7. 8. 的功能，可以下列兩種方式實現：
 
