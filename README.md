@@ -44,7 +44,7 @@
      * Height 為 40
      * top 在 super view 的 centerYAnchor 的下方 20 pt 
 
-4. 點擊 UIButton 會回到上一頁（**FirstPage**）。
+4. 不管從何種方式連過來，點擊 UIButton 都會回到上一頁（**FirstPage**）。
 
 5. 若是從 **FirstPage** 的 Cell 連過來，UITextField 會顯示與點擊的 Cell 的 label 上的內容。
 
